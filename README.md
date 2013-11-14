@@ -3,3 +3,8 @@ This is a stab at the rubyquiz #19 problem and solution. I find the solution off
 
 ## Usage
 No idea yet. I want it decoupled from any UI shit. It should be able to be plugged into a web or console UI easily.
+
+## Health
+Our goverment can't get this shit right, but I can...
+
+[![Coverage Status](https://coveralls.io/repos/dreamr/functional_yahtzee/badge.png?branch=master)](https://coveralls.io/r/dreamr/functional_yahtzee?branch=master)
