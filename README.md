@@ -9,5 +9,5 @@ Our goverment can't get this shit right, but I can...
 
 [![Coverage Status](https://coveralls.io/repos/dreamr/functional_yahtzee/badge.png?branch=master)](https://coveralls.io/r/dreamr/functional_yahtzee?branch=master)
 
-[![Build Status](https://travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME].png)](https://travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME])
+[![Build Status](https://travis-ci.org/dreamr/functional_yahtzee.png)](https://travis-ci.org/dreamr/functional_yahtzee)
 
