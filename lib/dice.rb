@@ -5,7 +5,8 @@ module Yahtzee::Dice
   MAX_DIE_COUNT = 5
   
   def self.roll(num)
-    1.upto(num).map {|die| rand(DIE_SIDES) }
+    limit = num > MAX_DIE_COUNT ? MAX_DIE_COUNT : num
+    1.upto(limit).map {|die| rand(1..DIE_SIDES) }
   end
 end
 

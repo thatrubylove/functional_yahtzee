@@ -1,13 +1,20 @@
 require 'test_helper'
-require 'scoring/lower_scoring'
+require 'scoring/lower_card'
 
-describe Yahtzee::Scoring::LowerScoring do
-  subject { Yahtzee::Scoring::LowerScoring }
+describe Yahtzee::Scoring::LowerCard do
+  subject { Yahtzee::Scoring::LowerCard }
 
   describe "score_yahtzee(dice)" do
     it "must score a yahtzee" do
       subject.score_yahtzee([4,4,4,4,4]).must_equal 50
       subject.score_yahtzee([4,4,4,4,6]).must_equal 0
+    end
+  end
+
+  describe "score_bonus_yahtzee(dice)" do
+    it "must score a bonus yahtzee" do
+      subject.score_bonus_yahtzee([4,4,4,4,4]).must_equal 100
+      subject.score_bonus_yahtzee([4,4,4,4,6]).must_equal 0
     end
   end
 
@@ -26,8 +33,11 @@ describe Yahtzee::Scoring::LowerScoring do
   end
   
   describe "score_full_house(dice)" do
-    it "must total matches of 3 and 2" do
+    it "must return a score of 25 for a full house" do
       subject.score_full_house([2,2,2,4,4]).must_equal 25
+    end
+
+    it "must return a score of 0 for no full-house" do
       subject.score_full_house([1,2,4,4,4]).must_equal 0
     end
   end

@@ -1,12 +1,12 @@
 require_relative 'yahtzee'
-require 'scoring/upper_scoring'
-require 'scoring/lower_scoring'
+require 'scoring/upper_card'
+require 'scoring/lower_card'
 
 
 module Yahtzee::Scoring
   class Card
-    include UpperScoring
-    include LowerScoring
+    include UpperCard
+    include LowerCard
 
     def blank_card
       {

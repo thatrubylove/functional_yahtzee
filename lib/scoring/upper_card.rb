@@ -1,9 +1,8 @@
 require_relative '../yahtzee'
 
 module Yahtzee::Scoring
-  module UpperScoring
-
-    extend self #cheap way to module_function the whole mess
+  module UpperCard
+    module_function
 
     def score_aces(dice)
       score_sums(dice, 1)

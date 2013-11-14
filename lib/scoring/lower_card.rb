@@ -1,10 +1,9 @@
 require_relative '../yahtzee'
 
 module Yahtzee::Scoring
-  module LowerScoring
+  module LowerCard
+    module_function
 
-    extend self #cheap way to module_function the whole mess
-    
     def score_full_house(dice)
       sorted = dice.sort
       if sorted.count(sorted.first) + sorted.count(sorted.last) == 5
@@ -26,6 +25,10 @@ module Yahtzee::Scoring
 
     def score_yahtzee(dice)
       dice.uniq.count == 1 ? 50 : 0
+    end
+
+    def score_bonus_yahtzee(dice)
+      dice.uniq.count == 1 ? 100 : 0
     end
 
     def score_three_of_a_kind(dice)

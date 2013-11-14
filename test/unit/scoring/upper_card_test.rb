@@ -1,8 +1,8 @@
 require 'test_helper'
-require 'scoring/upper_scoring'
+require 'scoring/upper_card'
 
-describe Yahtzee::Scoring::UpperScoring do
-  subject { Yahtzee::Scoring::UpperScoring }
+describe Yahtzee::Scoring::UpperCard do
+  subject { Yahtzee::Scoring::UpperCard }
 
   describe "score_sums(dice, scoring_die)" do
     it "must add up only the scoring_die" do
