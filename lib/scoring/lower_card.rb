@@ -1,5 +1,3 @@
-require 'yahtzee'
-
 module Yahtzee::Scoring
   module LowerCard
     module_function
@@ -23,14 +21,6 @@ module Yahtzee::Scoring
       (dup.min.upto(dup.max).to_a <=> dup) == 0 ? 40 : 0
     end
 
-    def score_yahtzee(dice)
-      dice.uniq.count == 1 ? 50 : 0
-    end
-
-    def score_bonus_yahtzee(dice)
-      dice.uniq.count == 1 ? 100 : 0
-    end
-
     def score_three_of_a_kind(dice)
       score_min_of_a_kind(dice, 3)
     end
@@ -39,9 +29,17 @@ module Yahtzee::Scoring
       score_min_of_a_kind(dice, 4)
     end
 
+    def score_yahtzee(dice)
+      dice.uniq.count == 1 ? 50 : 0
+    end
+
+    def score_bonus_yahtzee(dice)
+      dice.uniq.count == 1 ? 100 : 0
+    end
+
     def score_min_of_a_kind(dice, min)
       value = max_dupe_count_as_hash(dice)
-      value[0] >= min ? value.reduce(:*) : 0
+      value[1] >= min ? value.reduce(:*) : 0
     end
 
     def dup_counts_as_hash(dice)

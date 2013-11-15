@@ -1,5 +1,3 @@
-require_relative '../yahtzee'
-
 module Yahtzee::Scoring
   module UpperCard
     module_function
