@@ -6,9 +6,6 @@ if RUBY_ENGINE == "ruby"
       Coveralls::SimpleCov::Formatter,
       SimpleCov::Formatter::HTMLFormatter
     ]
-    SimpleCov.start do
-      add_filter "/test/"
-    end
   rescue LoadError
     warn "unable to load Coveralls!"
   end
