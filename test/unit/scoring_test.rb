@@ -18,6 +18,23 @@ describe Yahtzee::Scoring::Card do
     end
 
     describe "place_key(placement)" do
+      describe "upper placements" do
+        Yahtzee::Scoring::Card.upper_scores.each do |key|
+          it "must lookup the right nesting for #{key}" do
+            subject.send(:placement_key, key).must_equal([
+                         :upper, key])
+          end
+        end
+      end
+
+      describe "lower placements" do
+        Yahtzee::Scoring::Card.lower_scores.each do |key|
+          it "must lookup the right nesting for #{key}" do
+            subject.send(:placement_key, key).must_equal([
+                         :lower, key])
+          end
+        end
+      end
     end
   end
 
