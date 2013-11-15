@@ -93,11 +93,10 @@ describe Yahtzee::Scoring do
         end
       end
 
-      describe "bonus_yahtzee" do
-        let(:game) { subject.score([1,1,1,1,1], :bonus_yahtzee) }
-        it "must return a score card with bonus_yahtzee: 100" do
-          skip
-          game.score_card.bonus_yahtzee.must_equal 100
+      describe "bonus_yahtzee_1" do
+        let(:game) { subject.score([1,1,1,1,1], :bonus_yahtzee_1) }
+        it "must return a score card with bonus_yahtzee_1: 100" do
+          game.score_card.bonus_yahtzee_1.must_equal 100
         end
       end
     end

@@ -1,7 +1,6 @@
 require 'yahtzee'
-
-require 'score_card'
 require 'scoring'
+require 'score_card'
 
 module Yahtzee
   class Game

@@ -1,3 +1,5 @@
+require 'yahtzee'
+
 module Yahtzee::Scoring
   module LowerCard
     module_function
@@ -36,6 +38,9 @@ module Yahtzee::Scoring
     def score_bonus_yahtzee(dice)
       dice.uniq.count == 1 ? 100 : 0
     end
+    alias_method :score_bonus_yahtzee_1, :score_bonus_yahtzee
+    alias_method :score_bonus_yahtzee_2, :score_bonus_yahtzee
+    alias_method :score_bonus_yahtzee_3, :score_bonus_yahtzee
 
     def score_min_of_a_kind(dice, min)
       value = max_dupe_count_as_hash(dice)
