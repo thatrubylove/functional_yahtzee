@@ -18,6 +18,13 @@ describe Yahtzee::Scoring::Card do
     end
 
     describe "place_key(placement)" do
+      describe "with an unknown placement" do
+        it "must blow chunks" do
+          -> {
+            subject.send(:placement_key, :not_a_valid_placement)
+          }.must_raise Yahtzee::Errors::NotAScoreboardPlacementError
+        end
+      end
       describe "upper placements" do
         Yahtzee::Scoring::Card.upper_scores.each do |key|
           it "must lookup the right nesting for #{key}" do

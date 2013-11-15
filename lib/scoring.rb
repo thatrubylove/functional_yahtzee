@@ -1,10 +1,12 @@
-require_relative 'yahtzee'
+require 'yahtzee'
+
 require 'scoring/upper_card'
 require 'scoring/lower_card'
 
 
 module Yahtzee::Scoring
   class Card
+    include Yahtzee::Errors
     include UpperCard
     include LowerCard
 
@@ -61,7 +63,7 @@ module Yahtzee::Scoring
       if Card.lower_scores.include? placement
         return [:lower, :"#{placement}"]
       end
-      raise Exception.new("#{placement} is not in score card!")
+      raise NotAScoreboardPlacementError.new("#{placement} is not in score card!")
     end
   end
 end
