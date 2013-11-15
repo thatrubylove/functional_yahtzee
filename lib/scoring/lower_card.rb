@@ -12,8 +12,8 @@ module Yahtzee::Scoring
     end
 
     def score_small_straight(dice)
-      dup = dice.sort.uniq.dup
-      (dup.min.upto(dup.max).to_a <=> dup) == 0 ? 30 : 0
+      sliced = dice.sort.select.with_index {|die, i| die if die - (i+1) == 0 }
+      sliced.size == 4 ? 30 : 0
     end
 
     def score_large_straight(dice)
