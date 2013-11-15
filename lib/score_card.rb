@@ -14,5 +14,10 @@ module Yahtzee
     def initialize(attrs={})
       super *attrs.values_at(*self.class.members)
     end
+
+    def update!(attrs)
+      attrs.each {|k,v| self[k] = v }
+      self
+    end
   end
 end

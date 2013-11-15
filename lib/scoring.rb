@@ -11,19 +11,14 @@ module Yahtzee
     extend LowerCard   
 
     module_function    
-    def score(dice, placement)
+    def score(dice, placement, &updater)
       value = send("score_#{placement.to_s}", dice)
-      new_game_with_a_new_card(placement, value)      
+      updater.call(placement, value)      
     end
 
-    def score_subtotal(scores, placement)
+    def score_subtotal(scores, placement, &updater)
       value = scores.values.compact.inject(:+)
-      new_game_with_a_new_card(placement, value)
-    end
-
-    def new_game_with_a_new_card(placement, value)
-      Yahtzee::Game.new(
-        Yahtzee::ScoreCard.new({placement.to_sym => value}))
+      updater.call(placement, value)
     end
   end
 end
