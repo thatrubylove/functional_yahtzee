@@ -4,11 +4,11 @@ require 'scoring/upper_card'
 require 'scoring/lower_card'
 
 
-module Yahtzee::Scoring
-  class Card
+module Yahtzee
+  class Game
     include Yahtzee::Errors
-    include UpperCard
-    include LowerCard
+    include Scoring::UpperCard
+    include Scoring::LowerCard
 
     attr_reader :score_card
 
@@ -51,16 +51,16 @@ module Yahtzee::Scoring
     def score(dice, placement)
       value = send("score_#{placement.to_s}", dice)
       section, key = placement_key(placement)
-      Card.new({section.to_sym => {key.to_sym => value}}).score_card
+      Game.new({section.to_sym => {key.to_sym => value}})
     end
 
   private
 
     def placement_key(placement)
-      if Card.upper_scores.include? placement
+      if Game.upper_scores.include? placement
         return [:upper, :"#{placement}"]
       end
-      if Card.lower_scores.include? placement
+      if Game.lower_scores.include? placement
         return [:lower, :"#{placement}"]
       end
       raise NotAScoreboardPlacementError.new("#{placement} is not in score card!")
