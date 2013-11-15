@@ -60,7 +60,6 @@ describe Yahtzee::Scoring do
       describe "small_straight" do
         let(:game) { subject.score([1,2,3,4,6], :small_straight) }
         it "must return a score card with small_straight: 30" do
-          skip
           game.score_card.small_straight.must_equal 30
         end
       end

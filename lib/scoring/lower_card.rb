@@ -6,21 +6,20 @@ module Yahtzee::Scoring
 
     def score_full_house(dice)
       sorted = dice.sort
-      if sorted.count(sorted.first) + sorted.count(sorted.last) == 5
-        25
-      else
-        0
-      end
+      (sorted.count(sorted.first) + 
+       sorted.count(sorted.last) == 5) ? 25 : 0
     end
 
     def score_small_straight(dice)
-      sliced = dice.sort.select.with_index {|die, i| die if die - (i+1) == 0 }
-      sliced.size == 4 ? 30 : 0
+      dice.each_cons(4).any? do |a,b,c,d| 
+        a+1==b && b+1==c && c+1==d
+      end ? 30 : 0
     end
 
     def score_large_straight(dice)
-      dup = dice.sort.dup
-      (dup.min.upto(dup.max).to_a <=> dup) == 0 ? 40 : 0
+      dice.each_cons(5).any? do |a,b,c,d,e| 
+        a+1==b && b+1==c && c+1==d && d+1==e
+      end ? 40 : 0
     end
 
     def score_three_of_a_kind(dice)

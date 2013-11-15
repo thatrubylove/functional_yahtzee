@@ -20,7 +20,7 @@ describe Yahtzee::Scoring::LowerCard do
 
   describe "score_small_straight(dice)" do
     it "must score a small straight" do
-      subject.score_small_straight([1,2,3,4,4]).must_equal 30
+      subject.score_small_straight([1,2,3,4,6]).must_equal 30
       subject.score_small_straight([1,2,3,5,6]).must_equal 0
     end
   end
