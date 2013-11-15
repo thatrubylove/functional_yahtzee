@@ -12,10 +12,11 @@ In OO I go top down, in functional I go bottom up.
 
 Writing short, functional, idempotent (READ AWESOME) methods to lead the design is better than letting the 'real' world lead the design. This is my experience anyway - your milage may vary. 
 
-Controversial, eat me. My code is prettier than your code.
+Controversial, eat me. My code can beat your code up..
 
 ## Health
-Our goverment can't get this shit right, but I can...
+* Because application health is important, just ask
+  [healtcare.gov](http://www.healthcare.gov).
 
 [![Build
 Status](https://travis-ci.org/dreamr/functional_yahtzee.png)](https://travis-ci.org/dreamr/functional_yahtzee)
