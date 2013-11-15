@@ -9,4 +9,4 @@ Our goverment can't get this shit right, but I can...
 
 [![Build
 Status](https://travis-ci.org/dreamr/functional_yahtzee.png)](https://travis-ci.org/dreamr/functional_yahtzee)
-[![Coverage Status](https://coveralls.io/repos/dreamr/functional_yahtzee/badge.png?branch=master)](https://coveralls.io/r/dreamr/functional_yahtzee?branch=master) [![CodeClimate Grade](https://codeclimate.com/github/dreamr/functional_yahtzee.png)](https://codeclimate.com/github/dreamr/functional_yahtzee.png)
+[![Coverage Status](https://coveralls.io/repos/dreamr/functional_yahtzee/badge.png?branch=master)](https://coveralls.io/r/dreamr/functional_yahtzee?branch=master) [![CodeClimate Grade](https://codeclimate.com/github/dreamr/functional_yahtzee.png)](https://codeclimate.com/github/dreamr/functional_yahtzee/code)
