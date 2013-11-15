@@ -1,5 +1,6 @@
 require 'yahtzee'
 require 'score_card'
+require 'persistence/score_card'
 require 'scoring/upper_card'
 require 'scoring/lower_card'
 
