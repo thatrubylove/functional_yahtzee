@@ -1,4 +1,4 @@
-require_relative '../yahtzee'
+require 'yahtzee'
 
 module Yahtzee::Scoring
   module LowerCard
