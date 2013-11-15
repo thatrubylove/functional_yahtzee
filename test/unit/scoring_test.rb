@@ -47,6 +47,16 @@ describe Yahtzee::Scoring do
           game.score_card.sixes.must_equal 12
         end
       end
+
+      describe "Upper Subtotal" do
+        let(:game) { subject.score_subtotal({
+          aces: 2, twos: 4, threes: 6,
+          fours: 8, fives: 10, sixes: 12
+        }, :upper_subtotal) }
+        it "must return a score card with upper_subtotal: 42" do
+          game.score_card.upper_subtotal.must_equal 42
+        end
+      end
     end
 
     describe "LowerCard Scoring" do
@@ -96,6 +106,17 @@ describe Yahtzee::Scoring do
         let(:game) { subject.score([1,1,1,1,1], :bonus_yahtzee_1) }
         it "must return a score card with bonus_yahtzee_1: 100" do
           game.score_card.bonus_yahtzee_1.must_equal 100
+        end
+      end
+
+      describe "Lower Subtotal" do
+        let(:game) { subject.score_subtotal({
+          full_house: 25, small_straight: 30, 
+          large_straight: 40, three_of_a_kind: 9,
+          four_of_a_kind: 12, yahtzee: 50
+        }, :lower_subtotal) }
+        it "must return a score card with lower_subtotal: 166" do
+          game.score_card.lower_subtotal.must_equal 166
         end
       end
     end

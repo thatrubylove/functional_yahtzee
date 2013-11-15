@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'score_card'
 require 'scoring/upper_card'
 
 describe Yahtzee::Scoring::UpperCard do
