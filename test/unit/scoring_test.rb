@@ -6,7 +6,7 @@ describe Yahtzee::Scoring do
 
   describe "score(dice, placement)" do
     let(:game_card) { Yahtzee::ScoreCard.new }
-    let(:updater) { Yahtzee::Persistence::ScoreCard.update(game_card) }
+    let(:updater)   { Yahtzee::ScoreCardUpdater.update(game_card) }
 
     describe "UpperCard Scoring" do
       describe "Aces" do

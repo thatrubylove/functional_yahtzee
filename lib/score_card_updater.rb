@@ -1,8 +1,7 @@
 require 'yahtzee'
-require 'score_card'
 
-module Yahtzee::Persistence
-  module ScoreCard
+module Yahtzee
+  module ScoreCardUpdater
     module_function
 
     def update(game_card)
