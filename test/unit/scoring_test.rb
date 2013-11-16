@@ -5,8 +5,8 @@ describe Yahtzee::Scoring do
   subject { Yahtzee::Scoring }
 
   describe "score(dice, placement)" do
-    let(:game_card) { Yahtzee::ScoreCard.new }
-    let(:updater)   { Yahtzee::ScoreCardUpdater.update(game_card) }
+    let(:score_card) { Yahtzee::ScoreCard.new }
+    let(:updater)   { Yahtzee::ScoreCardUpdater.update(score_card) }
 
     describe "UpperCard Scoring" do
       describe "Aces" do

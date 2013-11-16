@@ -4,9 +4,10 @@ module Yahtzee
   module ScoreCardUpdater
     module_function
 
-    def update(game_card)
+    def update(score_card)
       ->(placement, value) {
-          game_card.update!(placement => value)
+          new_card = score_card.clone
+          new_card.update!(placement => value)
         }
     end
   end 
