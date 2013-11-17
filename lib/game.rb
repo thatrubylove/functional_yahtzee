@@ -5,7 +5,7 @@ require 'scoring'
 module Yahtzee
   class Game
     include Yahtzee::Errors
-    include Yahtzee::Scoring
+    extend Yahtzee::Scoring
 
     attr_reader :score_card
 
