@@ -16,6 +16,12 @@ describe Yahtzee::Scoring::LowerCard do
       subject.score_bonus_yahtzee([4,4,4,4,4]).must_equal 100
       subject.score_bonus_yahtzee([4,4,4,4,6]).must_equal 0
     end
+
+    #1.upto(3) do |i|
+    #  it "must respond to score_bonus_yahtzee_#{i}" do
+    #    subject.send("score_bonus_yahtzee_#{i}",[4,4,4,4,4]).must_equal 100
+    #  end
+    #end
   end
 
   describe "score_small_straight(dice)" do

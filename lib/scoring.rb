@@ -21,6 +21,18 @@ module Yahtzee
       value = scores.values.compact.inject(:+)
       updater.call(placement, value)
     end
+
+    def score_upper_total(scores, &updater)
+      subtotal = scores.values.reduce(:+)
+      bonus = subtotal >= 63 ? 35 : 0
+      updater.call(:upper_total, bonus+subtotal)
+    end
+
+    def score_game_total(scores, &updater)
+      value = scores.values.reduce(:+)
+      updater.call(:game_total, value)
+    end
+
   end
 end
 

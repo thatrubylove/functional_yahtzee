@@ -8,16 +8,17 @@ module Yahtzee
               :full_house, :three_of_a_kind, :four_of_a_kind,
               :yahtzee, :chance, :bonus_yahtzee_1,
               :bonus_yahtzee_2, :bonus_yahtzee_3,
-              :lower_subtotal, :grand_total]
+              :lower_subtotal, :game_total]
 
   class ScoreCard < Struct.new(*SCORINGS)
     def initialize(attrs={})
       super *attrs.values_at(*self.class.members)
     end
 
-    def update!(attrs)
-      attrs.each {|k,v| self[k] = v }
-      self
+    def to_hash
+      Yahtzee::SCORINGS.reduce({}) do |hash, attr|
+        hash.merge(attr => send(attr))
+      end
     end
   end
 end

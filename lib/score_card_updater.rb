@@ -6,9 +6,11 @@ module Yahtzee
 
     def update(score_card)
       ->(placement, value) {
-          new_card = score_card.clone
-          new_card.update!(placement => value)
-        }
+        old_values = score_card.to_hash
+        new_values = { placement => value }
+        score_card = score_card.class.
+                                new(old_values.merge(new_values))
+      }
     end
-  end 
+  end
 end

@@ -5,6 +5,7 @@ require 'scoring/upper_card'
 describe Yahtzee::Scoring::UpperCard do
   subject { Yahtzee::Scoring::UpperCard }
 
+
   describe "score_sums(dice, scoring_die)" do
     it "must add up only the scoring_die" do
       subject.score_sums([1,1,0,0,0], 1).must_equal 2

@@ -8,6 +8,17 @@ describe Yahtzee::Scoring do
     let(:score_card) { Yahtzee::ScoreCard.new }
     let(:updater)   { Yahtzee::ScoreCardUpdater.update(score_card) }
 
+    describe "score_game_total(scores, &updater)" do
+      let(:scores) {{
+        upper_total: 119, lower_subtotal: 166
+      }}
+
+      it "must return a score card with the game total of 285 (119+166)" do
+        subject.score_game_total(scores, &updater).
+                game_total.must_equal 285
+      end
+    end
+    
     describe "UpperCard Scoring" do
       describe "Aces" do
         it "must return a score card with aces: 2" do
@@ -60,6 +71,28 @@ describe Yahtzee::Scoring do
         it "must return a score card with upper_subtotal: 42" do
           subject.score_subtotal(scores, :upper_subtotal, &updater).
                   upper_subtotal.must_equal 42
+        end
+      end
+
+      describe "score_upper_total(scores, &updater)" do
+        let(:scores) {{
+          aces: 4, twos: 8, threes: 12,
+          fours: 16, fives: 20, sixes: 24
+        }}
+
+        it "must a score card with an upper_total of 119 (84+35)" do
+          subject.score_upper_total(scores, &updater).
+                  upper_total.must_equal 119
+        end
+      end
+      describe "when the sum is not over 63" do
+        let(:scores) {{
+          aces: 2, twos: 4, threes: 6,
+          fours: 8, fives: 10, sixes: 12
+        }}
+        it "must return a score card with an upper_total of 42" do
+          subject.score_upper_total(scores, &updater).
+                  upper_total.must_equal 42
         end
       end
     end

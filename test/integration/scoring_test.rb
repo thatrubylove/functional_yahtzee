@@ -6,15 +6,21 @@ describe Yahtzee::Scoring do
 
   describe "score(dice, placement)" do
     describe "UpperCard Scoring" do
-      let(:game_card) { Yahtzee::ScoreCard.new }
+      let(:score_card) { Yahtzee::ScoreCard.new }
+      let(:update_callback) {
+        Yahtzee::ScoreCardUpdater.update(score_card)
+      }
+
       it "must keep state" do
-        updater = ->(placement, value) {
-          game_card.update!(placement => value)
-        }
-        card = subject.score([1,1,3,4,5], :aces, &updater)        
-        card = subject.score([1,2,2,4,5], :twos, &updater)
+        card = subject.score([1,1,3,4,5], :aces, &update_callback)
+        card.aces.must_equal 2
+        card = subject.score([1,2,2,4,5], :twos, &update_callback)
         card.aces.must_equal 2
         card.twos.must_equal 4
+        card = subject.score([4,4,4,4,4], :yahtzee, &update_callback)
+        card.aces.must_equal 2
+        card.twos.must_equal 4
+        card.yahtzee.must_equal 50
       end
     end
   end

@@ -9,4 +9,20 @@ describe Yahtzee::ScoreCard do
       subject.new( {:aces => 4} ).aces.must_equal 4
     end
   end
+
+  describe "to_hash" do
+    it "must return a hash of the score card elements" do
+      subject.new({aces: 4}).to_hash.must_equal({
+        aces: 4, twos: nil, threes: nil,
+        fours: nil, fives: nil, sixes: nil,
+        upper_subtotal: nil, upper_bonus: nil,
+        upper_total: nil, small_straight: nil,
+        large_straight: nil, full_house: nil,
+        three_of_a_kind: nil, four_of_a_kind: nil,
+        yahtzee: nil, chance: nil, bonus_yahtzee_1: nil,
+        bonus_yahtzee_2: nil, bonus_yahtzee_3: nil,
+        lower_subtotal: nil, game_total: nil 
+      })
+    end
+  end
 end
