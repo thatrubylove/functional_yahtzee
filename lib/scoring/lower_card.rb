@@ -4,6 +4,10 @@ module Yahtzee::Scoring
   module LowerCard
     module_function
 
+    def score_chance(dice)
+      dice.reduce(:+)
+    end
+
     def score_full_house(dice)
       sorted = dice.sort
       (sorted.count(sorted.first) + 

@@ -8,7 +8,6 @@ describe Yahtzee::Scoring do
     let(:score_card) { Yahtzee::ScoreCard.new }
     let(:save_card)  { Yahtzee::ScoreCard.save(score_card) }
 
-
     describe "score_game_total(scores, &save_card)" do
       let(:scores) {{
         upper_total: 119, lower_subtotal: 166
@@ -99,6 +98,13 @@ describe Yahtzee::Scoring do
     end
 
     describe "LowerCard Scoring" do
+      describe "chance" do
+        it "must sum the dice" do
+          subject.score([1,2,3,4,5], :chance, &save_card).
+                  chance.must_equal 15
+        end
+      end
+
       describe "full_house" do
         it "must return a score card with full_house: 25" do
           subject.score([1,1,1,2,2], :full_house, &save_card).
