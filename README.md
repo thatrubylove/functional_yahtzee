@@ -1,6 +1,13 @@
 # Functional Yahztee in RUBY
 This is a stab at the [rubyquiz #19](http://rubyquiz.com/quiz19.html) problem and solution. I find the solution offered to be a highly coupled ugly mess of shit. And yes, I think I can do better, or I wouldn't be writing a yahtzee game.
 
+## Why *functional ruby*?
+I think OO is mostly a messy experiment that didn't work, only not
+everyone has realized this. We are moving towards a world where CPU
+matters not, and instead cores matter. 
+
+If you love Ruby as much as I do, you will learn this style and start using it or Ruby will die. Concurrency is the future and the now.
+
 *ps. I love JEG2 so suck it*
 
 ## Usage
