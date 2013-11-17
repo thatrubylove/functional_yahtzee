@@ -4,6 +4,17 @@ require 'score_card'
 describe Yahtzee::ScoreCard do
   subject { Yahtzee::ScoreCard }
 
+  describe "update" do
+    subject { Yahtzee::ScoreCard.save(score_card) }
+    let(:score_card) { Yahtzee::ScoreCard.new( yahtzee: 50 ) }
+
+    it "will return a new instance of ScoreCard with the old+new vals" do
+      old_id = score_card.object_id
+      score_card = subject.call(:small_straight, 30)
+      score_card.object_id.wont_equal old_id
+    end
+  end
+
   describe "initialize" do
     it "will update attrs when passed in" do
       subject.new( {:aces => 4} ).aces.must_equal 4

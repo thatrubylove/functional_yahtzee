@@ -20,5 +20,13 @@ module Yahtzee
         hash.merge(attr => send(attr))
       end
     end
+
+    def self.save(score_card)
+      ->(placement, value) {
+        old_values = score_card.to_hash
+        new_values = { placement => value }
+        score_card = new(old_values.merge(new_values))
+      }
+    end
   end
 end
