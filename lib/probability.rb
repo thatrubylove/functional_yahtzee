@@ -1,6 +1,9 @@
 require 'yahtzee'
 require 'dice'
 
+# I will need some kind of UI, Yahtzee::Probability aids in
+# the decisions an AI will have to make based on their score
+# card, the dice, and the probability vs possible score
 module Yahtzee::Probability
   module_function
 

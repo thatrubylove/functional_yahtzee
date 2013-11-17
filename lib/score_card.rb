@@ -1,5 +1,9 @@
 require 'yahtzee'
 
+# Immutable via API, I will work on freezing this later,
+# but notice that when you 'save' you are not altering
+# THIS instance, you return a new instance with the old 
+# and the new attributes
 module Yahtzee
   SCORINGS = [:aces, :twos, :threes, 
               :fours, :fives, :sixes,

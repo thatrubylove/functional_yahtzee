@@ -1,5 +1,6 @@
 require_relative 'yahtzee'
 
+# Yahtzee::Dice is just a dice dsl for yahtzee
 module Yahtzee::Dice
   DIE_FACES = 6
   MAX_DIE_COUNT = 5

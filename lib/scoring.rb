@@ -3,6 +3,14 @@ require 'score_card'
 require 'scoring/upper_card'
 require 'scoring/lower_card'
 
+# Yahtzee::Scoring is our mechnism for scoring dice
+# to placement spots on the score card. If the method
+# is located here, it will include a callback you can
+# define. Right now it is used for writing the value
+# to the object, but you could print the value instead.
+# 
+# Notice there is no direct coupling of type between this
+# and the possible caller, just a contract on the params
 module Yahtzee
   module Scoring
 

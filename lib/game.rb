@@ -2,6 +2,8 @@ require 'yahtzee'
 require 'dice'
 require 'scoring'
 
+# Possibly the imperative shell, I might not end
+# up even needing it if I am clever
 module Yahtzee
   class Game
     include Yahtzee::Errors
