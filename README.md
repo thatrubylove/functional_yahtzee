@@ -23,6 +23,17 @@ working on this problem. I am happy to say that Ruby 2.0+ is
 perfectly suited as a stepping stone to get you into the new
 world, a world where CPU matters not, and cores own.
 
+## Requirements
+This is being developed in Ruby 2.1 with CI running on 2.0 and 1.9.3. My style tends to stay away from external dependencies whenever I can. (read: I am not afraid to code what I need)
+
+I haven't gemmified this as of yet, so a clone and bundle with ruby
+1.9.3+ and you can run the tests..
+
+```bash
+cd <cloned_path>
+rake
+```
+
 ## Usage
 Not quite there, I am still working on the functional core to
 support the game and the AI.
