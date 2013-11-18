@@ -1,30 +1,62 @@
 # Functional Yahztee in RUBY
-This is a stab at the [rubyquiz #19](http://rubyquiz.com/quiz19.html) problem and solution. I find the solution offered to be a highly coupled ugly mess of shit. And yes, I think I can do better, or I wouldn't be writing a yahtzee game. *ps. I love JEG2 so suck it*
+This is going to serve as my showcase codebase. This is very
+indicitive of my style of coding and testing in Ruby. I love
+tests, I love idempotentcy, I love pretty code that is short and
+concise.
 
+If you are like me, and I know I am... you have something to learn from this code here. This is how you write clean, decoupled, testable, functional ruby code.
 
-## Why *functional ruby*?
-I think OO is mostly a messy experiment that didn't work, only not
-everyone has realized this. We are moving towards a world where CPU
-matters not, and instead cores matter. 
+Expect a series of screencasts discussing the choices I have made here to get the results I ended up with.
 
-If you love Ruby as much as I do, you will learn this style and start using it or Ruby will die. Concurrency is the future and the now.
+[rubyquiz #19](http://rubyquiz.com/quiz19.html) proposed this
+problem, and a very imperative solution was provided by James
+Edward Gray II, one my ruby heros. I doubt he would write this the same way could he revisit the problem.
+
+This is my contribution to the same problem, with the additional task of being as functional as possible and downright pretty code.
+
+## Ruby is dead
+1.8 was the Ruby of your Father. It was for a world with single cores and CPUs growing at a predictable rate each year. Ruby 1.8 is dead....
+
+## Long Live Ruby
+Thankfully the teams behind Rubinius, JRuby, and even MRI have been
+working on this problem. I am happy to say that Ruby 2.0+ is
+perfectly suited as a stepping stone to get you into the new
+world, a world where CPU matters not, and cores own.
 
 ## Usage
-No idea yet. I want it decoupled from any UI. It should be able to be plugged into a web or console UI easily. I don't 'do' top down.
+Not quite there, I am still working on the functional core to
+support the game and the AI.
 
-I like getting the functional internals squared away first. I can identify internals pretty easily based on many, many years of writing shit.
+## Contributions
+I am not accepting contributions at this time, this is my showcase code.
 
-As I build my internals (functional and idempotent) I move closer to my domain and the dsl starts to present itself.
+## Many Thanks
+I would like to say thank you to all the people I have sucked off of like a vampiric zombie since 2007. Some of these were from videos of talks, some were pairing sessions, some were just friends on irc who liked to bang Ruby.
 
-In OO I go top down, in functional I go bottom up.
+* James Edward Gray II
+* Josh Susser
+* Ben Curtis
+* Avdi Grimm
+* Zed
+* Gregg Pollack
+* Daniel Fischer
+* Jose Valim
+* Aaron Patterson
+* Corey Haines
+* Ryan Bates
+* Steve Klabnik
+* Brian Guthrie
+* Fabio Akita
+* Rick Olsen
+* Obie Fernandez
+* Sandi Metz
+* Phil Cohen
+* Jessica Kerr
 
-Writing short, functional, idempotent (READ AWESOME) methods to lead the design is better than letting the 'real' world lead the design. This is my experience anyway - your milage may vary. 
-
-Controversial, eat me. My code can beat your code up..
+Whew.. Sorry if I missed you!
 
 ## Health
-* Because application health is important, just ask
-  [healtcare.gov](http://www.healthcare.gov).
+* My code can beat your code up
 
 [![Build
 Status](https://travis-ci.org/dreamr/functional_yahtzee.png)](https://travis-ci.org/dreamr/functional_yahtzee)
