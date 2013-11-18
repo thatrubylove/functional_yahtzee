@@ -35,8 +35,44 @@ rake
 ```
 
 ## Usage
-Not quite there, I am still working on the functional core to
-support the game and the AI.
+
+```ruby
+score_card = ScoreCard.new    
+writer     = ScoreCard.persist(score_card)
+
+Round.new do
+  roll1 = first_roll             # => [1,2,3,5,5]
+  roll2 = second_roll([1,2,3,5]) # => [1,2,3,5,3]
+  roll3 = third_roll([1,2,3,5])  # => [1,2,3,5,4]
+
+  score_card = Scoring.score(roll3, :large_straight, &writer)
+end
+
+Round.new do
+  roll1 = first_roll             # => [1,1,3,5,5]
+  roll2 = second_roll([1,1,5,5]) # => [1,1,5,5,1]
+
+  score_card = Scoring.score(roll2, :full_house, &writer)
+end
+
+# ...
+
+upper_scores = score_card.to_hash.select do |k,_| 
+  ScoreCard.upper_keys.include? k
+end
+score_card = Scoring.score_upper_total(upper_scores, &writer)
+
+lower_scores = score_card.to_hash.select do |k,_| 
+  ScoreCard.lower_keys.include? k
+end
+
+upper_total = score_card.upper_total
+game_scores = lower_scores.merge(upper_total: upper_total)
+score_card  = Scoring.score_game_total(game_scores, &writer)
+
+puts "Grand total: #{score_card.game_total}"
+
+```
 
 ## Contributions
 I am not accepting contributions at this time, this is my showcase code. This is my own highly opinionated software, inspired by all those listed in the section below *Many Thanks*.
