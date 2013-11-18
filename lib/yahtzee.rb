@@ -6,7 +6,7 @@ $:.unshift(File.expand_path("../../lib", __FILE__))
 # here as well.
 #
 module Yahtzee
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
 end
 
 require 'errors'
