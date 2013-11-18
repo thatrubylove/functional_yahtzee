@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'yahtzee'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Yahtzee"
+  spec.name          = "functional-yahtzee"
   spec.version       = Yahtzee::VERSION
   spec.authors       = ["Dreamr"]
   spec.email         = ["dreamr.okelly@gmail.com"]
