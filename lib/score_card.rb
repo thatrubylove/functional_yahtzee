@@ -25,7 +25,7 @@ module Yahtzee
       end
     end
 
-    def self.save(score_card)
+    def self.persist(score_card)
       ->(placement, value) {
         old_values = score_card.to_hash
         new_values = { placement => value }

@@ -5,7 +5,7 @@ describe Yahtzee::ScoreCard do
   subject { Yahtzee::ScoreCard }
 
   describe "update" do
-    subject { Yahtzee::ScoreCard.save(score_card) }
+    subject { Yahtzee::ScoreCard.persist(score_card) }
     let(:score_card) { Yahtzee::ScoreCard.new( yahtzee: 50 ) }
 
     it "will return a new instance of ScoreCard with the old+new vals" do

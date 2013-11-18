@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+lib = File.expand_path("../../lib",__FILE__)
+$:.unshift lib
+
+module Yahtzee
+  require 'game'
+
+  module_function
+
+  def repl
+    -> prompt do
+      print prompt
+      handle_input(gets.chomp!)
+    end
+  end
+
+  def handle_input(input)
+    begin
+      result = eval(input)
+    rescue Exception => e
+      result = e.message
+    end
+    puts result.to_s
+  end
+end
+
+loop do
+  Yahtzee.repl[">> "]
+end
+
