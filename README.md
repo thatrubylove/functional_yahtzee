@@ -39,7 +39,7 @@ Not quite there, I am still working on the functional core to
 support the game and the AI.
 
 ## Contributions
-I am not accepting contributions at this time, this is my showcase code.
+I am not accepting contributions at this time, this is my showcase code. This is my own highly opinionated software, inspired by all those listed in the section below *Many Thanks*.
 
 ## Many Thanks
 I would like to say thank you to all the people I have sucked off of like a vampiric zombie since 2007. Some of these were from videos of talks, some were pairing sessions, some were just friends on irc who liked to bang Ruby.
