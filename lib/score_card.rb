@@ -36,7 +36,6 @@ module Yahtzee
        :large_straight, :chance]
     end
 
-
     def self.persist(score_card)
       ->(placement, value) {
         old_values = score_card.to_hash

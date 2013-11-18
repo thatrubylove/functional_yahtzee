@@ -16,12 +16,11 @@ module Yahtzee
   end
 
   def handle_input(input)
-    begin
-      result = eval(input)
+    puts begin
+      eval(input)
     rescue Exception => e
-      result = e.message
-    end
-    puts result.to_s
+      e.message
+    end.to_s
   end
 end
 
