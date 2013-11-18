@@ -29,7 +29,7 @@ world, a world where CPU matters not, and cores own.
 This is being developed in Ruby 2.1 with CI running on 2.0 and 1.9.3. My style tends to stay away from external dependencies whenever I can. (read: I am not afraid to code what I need)
 
 I haven't gemmified this as of yet, so a clone and bundle with ruby
-1.9.3+ and you can run the tests..
+1.9.3+ and you can run the tests. I would love to get this running on rubinius as well.
 
 ```bash
 cd <cloned_path>
