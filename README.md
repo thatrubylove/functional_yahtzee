@@ -1,8 +1,7 @@
 # Functional Yahztee in RUBY
-This is going to serve as my showcase codebase. This is very
-indicitive of my style of coding and testing in Ruby. I love
-tests, I love idempotentcy, I love pretty code that is short and
-concise.
+
+The goal of this project is to build the dice game Yahtzee in a functional, concise, testable manner. The code within is
+highly opinionated, and is ahallmark of my style. This is my perfect world where code and beauty collide.
 
 If you are like me, and I know I am... you have something to learn from this code here. This is how you write clean, decoupled, testable, functional ruby code.
 
@@ -15,15 +14,18 @@ Edward Gray II, one my ruby heros. I doubt he would write this the same way coul
 This is my contribution to the same problem, with the additional task of being as functional as possible and downright pretty code.
 
 ## Ruby is dead
+
 1.8 was the Ruby of your Father. It was for a world with single cores and CPUs growing at a predictable rate each year. Ruby 1.8 is dead....
 
 ## Long Live Ruby
+
 Thankfully the teams behind Rubinius, JRuby, and even MRI have been
 working on this problem. I am happy to say that Ruby 2.0+ is
 perfectly suited as a stepping stone to get you into the new
 world, a world where CPU matters not, and cores own.
 
 ## Requirements
+
 This is being developed in Ruby 2.1 with CI running on 2.0 and 1.9.3. My style tends to stay away from external dependencies whenever I can. (read: I am not afraid to code what I need)
 
 I haven't gemmified this as of yet, so a clone and bundle with ruby
@@ -75,9 +77,11 @@ puts "Grand total: #{score_card.game_total}"
 ```
 
 ## Contributions
+
 I am not accepting contributions at this time, this is my showcase code. This is my own highly opinionated software, inspired by all those listed in the section below *Many Thanks*.
 
 ## Many Thanks
+
 I would like to say thank you to all the people I have sucked off of like a vampiric zombie since 2007. Some of these were from videos of talks, some were pairing sessions, some were just friends on irc who liked to bang Ruby.
 
 * James Edward Gray II
@@ -103,6 +107,7 @@ I would like to say thank you to all the people I have sucked off of like a vamp
 Whew.. Sorry if I missed you!
 
 ## Health
+
 * My code can beat your code up
 
 [![Build
