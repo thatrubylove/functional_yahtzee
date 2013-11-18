@@ -150,7 +150,274 @@ describe Yahtzee::Game do
         score_card.small_straight.must_equal 30
         score_card.yahtzee.must_equal 50
       end
+    end
+
+    # Round 7: Bonus Yahtzee 1
+    Round.new do
+      Dice.stub :roll, [4,4,4,6,5] do
+        first_roll.must_equal [4,4,4,6,5]
+      end
+
+      Dice.stub :roll, [4,2] do
+        second_roll([4,4,4]).must_equal [4,4,4,4,2]
+      end
+
+      Dice.stub :roll, [4,4] do
+        third_roll = third_roll([4,4,4])
+        third_roll.must_equal [4,4,4,4,4]
+
+        score_card = Scoring.score(third_roll, 
+                                   :bonus_yahtzee_1, &writer)
+
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
     end    
+
+    # Round 8: sixes
+    Round.new do
+      Dice.stub :roll, [6,6,6,6,5] do
+        first_roll.must_equal [6,6,6,6,5]
+      end
+
+      Dice.stub :roll, [2] do
+        second_roll([6,6,6,6]).must_equal [6,6,6,6,2]
+      end
+
+      Dice.stub :roll, [4] do
+        third_roll = third_roll([6,6,6,6])
+        third_roll.must_equal [6,6,6,6,4]
+
+        score_card = Scoring.score(third_roll, 
+                                   :sixes, &writer)
+
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 9: threes
+    Round.new do
+      Dice.stub :roll, [3,3,2,2,1] do
+        first_roll.must_equal [3,3,2,2,1]
+      end
+
+      Dice.stub :roll, [3,2,2] do
+        second_roll([3,3]).must_equal [3,3,3,2,2]
+      end
+
+      Dice.stub :roll, [3,1] do
+        third_roll = third_roll([3,3,3])
+        third_roll.must_equal [3,3,3,3,1]
+
+        score_card = Scoring.score(third_roll, 
+                                   :threes, &writer)
+
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 10: large straight
+    Round.new do
+      Dice.stub :roll, [2,3,4,5,4] do
+        first_roll.must_equal [2,3,4,5,4]
+      end
+
+      Dice.stub :roll, [3] do
+        second_roll([2,3,4,5]).must_equal [2,3,4,5,3]
+      end
+
+      Dice.stub :roll, [6] do
+        third_roll = third_roll([2,3,4,5])
+        third_roll.must_equal [2,3,4,5,6]
+
+        score_card = Scoring.score(third_roll, 
+                                   :large_straight, &writer)
+
+        score_card.large_straight.must_equal 40
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 11: twos
+    Round.new do
+      Dice.stub :roll, [2,2,2,5,4] do
+        first_roll.must_equal [2,2,2,5,4]
+      end
+
+      Dice.stub :roll, [2,1] do
+        second_roll([2,2,2]).must_equal [2,2,2,2,1]
+      end
+
+      Dice.stub :roll, [4] do
+        third_roll = third_roll([2,2,2,2])
+        third_roll.must_equal [2,2,2,2,4]
+
+        score_card = Scoring.score(third_roll, 
+                                   :twos, &writer)
+
+        score_card.twos.must_equal 8
+        score_card.large_straight.must_equal 40
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 12: three of a kind
+    Round.new do
+      Dice.stub :roll, [2,2,2,5,4] do
+        first_roll.must_equal [2,2,2,5,4]
+      end
+
+      Dice.stub :roll, [1,1] do
+        second_roll([2,2,2]).must_equal [2,2,2,1,1]
+      end
+
+      Dice.stub :roll, [3,4] do
+        third_roll = third_roll([2,2,2])
+        third_roll.must_equal [2,2,2,3,4]
+
+        score_card = Scoring.score(third_roll, 
+                                   :three_of_a_kind, &writer)
+
+        score_card.three_of_a_kind.must_equal 6
+        score_card.twos.must_equal 8
+        score_card.large_straight.must_equal 40
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 13: fours
+    Round.new do
+      Dice.stub :roll, [4,4,4,5,4] do
+        first_roll.must_equal [4,4,4,5,4]
+      end
+
+      Dice.stub :roll, [1] do
+        second_roll([4,4,4,4]).must_equal [4,4,4,4,1]
+      end
+
+      Dice.stub :roll, [3] do
+        third_roll = third_roll([4,4,4,4])
+        third_roll.must_equal [4,4,4,4,3]
+
+        score_card = Scoring.score(third_roll, 
+                                   :fours, &writer)
+
+        score_card.fours.must_equal 16
+        score_card.three_of_a_kind.must_equal 6
+        score_card.twos.must_equal 8
+        score_card.large_straight.must_equal 40
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+      end
+    end
+
+    # Round 14: chance
+    Round.new do
+      Dice.stub :roll, [4,4,4,5,4] do
+        first_roll.must_equal [4,4,4,5,4]
+      end
+
+      Dice.stub :roll, [1] do
+        second_roll([4,4,4,4]).must_equal [4,4,4,4,1]
+      end
+
+      Dice.stub :roll, [3] do
+        third_roll = third_roll([4,4,4,4])
+        third_roll.must_equal [4,4,4,4,3]
+
+        score_card = Scoring.score(third_roll, 
+                                   :chance, &writer)
+
+        score_card.chance.must_equal 19
+        score_card.fours.must_equal 16
+        score_card.three_of_a_kind.must_equal 6
+        score_card.twos.must_equal 8
+        score_card.large_straight.must_equal 40
+        score_card.threes.must_equal 12
+        score_card.sixes.must_equal 24
+        score_card.bonus_yahtzee_1.must_equal 100
+        score_card.four_of_a_kind.must_equal 16
+        score_card.fives.must_equal 20
+        score_card.full_house.must_equal 25
+        score_card.aces.must_equal 4
+        score_card.small_straight.must_equal 30
+        score_card.yahtzee.must_equal 50
+
+        assert (score_card.to_hash.
+                    select {|_,v| v.nil? }.
+                    keys - ScoreCard.meta_keys).
+                    none?, "all required fields must be filled"
+      end
+
+      upper_scores = score_card.to_hash.select do |k,_| 
+        ScoreCard.upper_keys.include? k
+      end
+      score_card = Scoring.score_upper_total(upper_scores, 
+                                             &writer)
+      
+      score_card.upper_total.must_equal 119
+
+      lower_scores = score_card.to_hash.select do |k,_| 
+        ScoreCard.lower_keys.include? k
+      end
+      game_scores = lower_scores.merge(
+                      upper_total: score_card.upper_total)
+      score_card = Scoring.score_game_total(game_scores, 
+                                             &writer)
+      
+      score_card.game_total.must_equal 405
+    end
 
   end
 end
