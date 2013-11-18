@@ -400,19 +400,26 @@ describe Yahtzee::Game do
                     none?, "all required fields must be filled"
       end
 
+      # Collect the score from the 'upper' section
       upper_scores = score_card.to_hash.select do |k,_| 
         ScoreCard.upper_keys.include? k
       end
+      # Score and persist upper total
       score_card = Scoring.score_upper_total(upper_scores, 
                                              &writer)
       
       score_card.upper_total.must_equal 119
 
+      # Collect the score from the 'lower' section
       lower_scores = score_card.to_hash.select do |k,_| 
         ScoreCard.lower_keys.include? k
       end
+
+      # Merge the upper total with the lower scores
       game_scores = lower_scores.merge(
                       upper_total: score_card.upper_total)
+
+      # Score and persist game total
       score_card = Scoring.score_game_total(game_scores, 
                                              &writer)
       
