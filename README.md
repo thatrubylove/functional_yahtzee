@@ -59,18 +59,13 @@ end
 
 # ...
 
-upper_scores = score_card.to_hash.select do |k,_| 
-  ScoreCard.upper_keys.include? k
-end
+upper_scores = score_card.upper_scores
 score_card = Scoring.score_upper_total(upper_scores, &writer)
 
-lower_scores = score_card.to_hash.select do |k,_| 
-  ScoreCard.lower_keys.include? k
-end
+game_scores = score_card.lower_scores.merge(
+                upper_total: score_card.upper_total)
 
-upper_total = score_card.upper_total
-game_scores = lower_scores.merge(upper_total: upper_total)
-score_card  = Scoring.score_game_total(game_scores, &writer)
+score_card = Scoring.score_lower_total(game_scores, &writer)
 
 puts "Grand total: #{score_card.game_total}"
 

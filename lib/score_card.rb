@@ -19,6 +19,14 @@ module Yahtzee
       super *attrs.values_at(*self.class.members)
     end
 
+    [:upper, :lower].each do |section|
+      define_method :"#{section}_scores" do
+        to_hash.select do |k,_|
+          self.class.send("#{section}_keys").include? k
+        end
+      end
+    end
+    
     def to_hash
       Yahtzee::SCORINGS.reduce({}) do |hash, attr|
         hash.merge(attr => send(attr))
