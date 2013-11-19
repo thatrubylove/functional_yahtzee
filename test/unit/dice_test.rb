@@ -1,6 +1,6 @@
 require 'test_helper'
 
-require 'dice'
+require 'yahtzee/dice'
 
 describe Yahtzee::Dice do
   subject { Yahtzee::Dice }

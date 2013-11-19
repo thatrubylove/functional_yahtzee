@@ -1,6 +1,6 @@
 require 'test_helper'
-require 'score_card'
-require 'scoring/upper_card'
+require 'yahtzee/score_card'
+require 'yahtzee/scoring/upper_card'
 
 describe Yahtzee::Scoring::UpperCard do
   subject { Yahtzee::Scoring::UpperCard }

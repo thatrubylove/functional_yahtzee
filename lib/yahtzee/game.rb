@@ -1,7 +1,7 @@
 require 'yahtzee'
-require 'dice'
-require 'round'
-require 'scoring'
+require 'yahtzee/dice'
+require 'yahtzee/round'
+require 'yahtzee/scoring'
 
 # This module is the imperative shell of sorts. It provides
 # the 'DSL' of the Yahtzee library and is mostly a wrapper

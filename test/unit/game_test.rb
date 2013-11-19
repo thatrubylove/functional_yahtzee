@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'game'
+require 'yahtzee/game'
 
 describe Yahtzee::Game do
   subject { Yahtzee::Game }

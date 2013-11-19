@@ -1,6 +1,6 @@
 require 'test_helper'
 
-require 'dice'
+require 'yahtzee/dice'
 
 describe "A turn of dice rolling" do
   subject { Yahtzee::Dice }

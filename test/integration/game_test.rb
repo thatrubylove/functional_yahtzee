@@ -1,5 +1,6 @@
 require 'test_helper'
-require 'game'
+require 'yahtzee/game'
+
 include Yahtzee
 include Yahtzee::Game
 

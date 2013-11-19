@@ -1,4 +1,4 @@
-require_relative 'yahtzee'
+require 'yahtzee'
 
 # Yahtzee::Dice is just a dice dsl for yahtzee
 module Yahtzee::Dice

@@ -1,7 +1,7 @@
 require 'yahtzee'
-require 'score_card'
-require 'scoring/upper_card'
-require 'scoring/lower_card'
+require 'yahtzee/score_card'
+require 'yahtzee/scoring/upper_card'
+require 'yahtzee/scoring/lower_card'
 
 # Yahtzee::Scoring is our mechnism for scoring dice
 # to placement spots on the score card. If the method

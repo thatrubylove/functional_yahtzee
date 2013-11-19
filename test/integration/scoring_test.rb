@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'scoring'
+require 'yahtzee/scoring'
 
 describe Yahtzee::Scoring do
   subject { Yahtzee::Scoring }

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'scoring/lower_card'
+require 'yahtzee/scoring/lower_card'
 
 describe Yahtzee::Scoring::LowerCard do
   subject { Yahtzee::Scoring::LowerCard }
