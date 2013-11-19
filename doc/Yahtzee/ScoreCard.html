@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Yahtzee::ScoreCard - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="banner" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <h3>
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" aria-live="polite"
+        aria-relevant="all" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Struct.new(*SCORINGS)
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-lower_keys">::lower_keys</a>
+    
+    <li ><a href="#method-c-meta_keys">::meta_keys</a>
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-persist">::persist</a>
+    
+    <li ><a href="#method-c-placement_keys">::placement_keys</a>
+    
+    <li ><a href="#method-c-upper_keys">::upper_keys</a>
+    
+    <li ><a href="#method-i-to_hash">#to_hash</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Yahtzee::ScoreCard">
+  <h1 id="class-Yahtzee::ScoreCard" class="class">
+    class Yahtzee::ScoreCard
+  </h1>
+
+  <section class="description">
+    
+<p>Immutable via API, I will work on freezing this later, but notice that when
+you &#39;save&#39; you are not altering THIS instance, you return a new
+instance with the old  and the new attributes</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-lower_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lower_keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lower_keys-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lower_keys</span>
+  [<span class="ruby-value">:yahtzee</span>, <span class="ruby-value">:bonus_yahtzee_1</span>, <span class="ruby-value">:bonus_yahtzee_2</span>, 
+   <span class="ruby-value">:bonus_yahtzee_3</span>, <span class="ruby-value">:three_of_a_kind</span>,
+   <span class="ruby-value">:four_of_a_kind</span>, <span class="ruby-value">:full_house</span>, <span class="ruby-value">:small_straight</span>,
+   <span class="ruby-value">:large_straight</span>, <span class="ruby-value">:chance</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-meta_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">meta_keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="meta_keys-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">meta_keys</span>
+  [<span class="ruby-value">:bonus_yahtzee_1</span>, <span class="ruby-value">:bonus_yahtzee_2</span>,
+   <span class="ruby-value">:bonus_yahtzee_3</span>, <span class="ruby-value">:upper_subtotal</span>,
+   <span class="ruby-value">:upper_total</span>,     <span class="ruby-value">:lower_subtotal</span>,
+   <span class="ruby-value">:game_total</span>] 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(attrs={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">attrs</span>={})
+  <span class="ruby-keyword">super</span> <span class="ruby-operator">*</span><span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">members</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-persist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">persist</span><span
+            class="method-args">(score_card)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="persist-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">persist</span>(<span class="ruby-identifier">score_card</span>)
+  <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">placement</span>, <span class="ruby-identifier">value</span>) {
+    <span class="ruby-identifier">old_values</span> = <span class="ruby-identifier">score_card</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-identifier">new_values</span> = { <span class="ruby-identifier">placement</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span> }
+    <span class="ruby-identifier">score_card</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">old_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">new_values</span>))
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-placement_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">placement_keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="placement_keys-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">placement_keys</span>
+  <span class="ruby-constant">Yahtzee</span><span class="ruby-operator">::</span><span class="ruby-constant">SCORINGS</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">meta_keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-upper_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upper_keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="upper_keys-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">upper_keys</span>
+  [<span class="ruby-value">:aces</span>, <span class="ruby-value">:twos</span>, <span class="ruby-value">:threes</span>, <span class="ruby-value">:fours</span>, <span class="ruby-value">:fives</span>, <span class="ruby-value">:sixes</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/score_card.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_hash</span>
+  <span class="ruby-constant">Yahtzee</span><span class="ruby-operator">::</span><span class="ruby-constant">SCORINGS</span>.<span class="ruby-identifier">reduce</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">attr</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">attr</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.preview.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
