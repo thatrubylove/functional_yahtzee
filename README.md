@@ -3,7 +3,7 @@
 The goal of this project is to build the dice game Yahtzee in a functional, concise, testable manner. The code within is
 highly opinionated, and is ahallmark of my style. This is my perfect world where code and beauty collide.
 
-If you are like me, and I know I am... you have something to learn from this code here. This is how you write clean, decoupled, testable, functional ruby code.
+If you are like me, and I know I am... you have something to learn from this code here. This is how you write clean, decoupled, testable, functional ruby code. If you have nothing to learn from this code, please, point something out I have wrong. I love to be *proved* wrong on something so I can correct it.
 
 Expect a series of screencasts discussing the choices I have made here to get the results I ended up with.
 
