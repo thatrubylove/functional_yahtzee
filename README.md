@@ -1,7 +1,7 @@
 # Functional Yahztee in RUBY
 
 The goal of this project is to build the dice game Yahtzee in a functional, concise, testable manner. The code within is
-highly opinionated, and is ahallmark of my style. This is my perfect world where code and beauty collide.
+highly opinionated, and is a hallmark of my style. This is my perfect world where code and beauty collide.
 
 If you are like me, and I know I am... you have something to learn from this code here. This is how you write clean, decoupled, testable, functional ruby code. If you have nothing to learn from this code, please, point something out I have wrong. I love to be *proved* wrong on something so I can correct it.
 
@@ -75,36 +75,3 @@ puts "Grand total: #{score_card.game_total}"
 
 I am not accepting contributions at this time, this is my showcase code. This is my own highly opinionated software, inspired by all those listed in the section below *Many Thanks*.
 
-## Many Thanks
-
-I would like to say thank you to all the people I have sucked off of like a vampiric zombie since 2007. Some of these were from videos of talks, some were pairing sessions, some were just friends on irc who liked to bang Ruby.
-
-* James Edward Gray II
-* Josh Susser
-* Ben Curtis
-* Avdi Grimm
-* Zed
-* Gregg Pollack
-* Daniel Fischer
-* Jose Valim
-* Aaron Patterson
-* Corey Haines
-* Ryan Bates
-* Steve Klabnik
-* Brian Guthrie
-* Fabio Akita
-* Rick Olsen
-* Obie Fernandez
-* Sandi Metz
-* Phil Cohen
-* Jessica Kerr
-
-Whew.. Sorry if I missed you!
-
-## Health
-
-* My code can beat your code up
-
-[![Build
-Status](https://travis-ci.org/dreamr/functional_yahtzee.png)](https://travis-ci.org/dreamr/functional_yahtzee)
-[![Coverage Status](https://coveralls.io/repos/dreamr/functional_yahtzee/badge.png?branch=master)](https://coveralls.io/r/dreamr/functional_yahtzee?branch=master) [![CodeClimate Grade](https://codeclimate.com/github/dreamr/functional_yahtzee.png)](https://codeclimate.com/github/dreamr/functional_yahtzee/code)
